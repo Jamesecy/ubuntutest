@@ -58,10 +58,6 @@ GEM
     builder (3.2.2)
     bunny (0.9.8)
       amq-protocol (>= 1.6.0)
-    byebug (3.5.1)
-      columnize (~> 0.8)
-      debugger-linecache (~> 1.2)
-      slop (~> 3.6)
     cancan (1.6.10)
     capistrano (3.2.1)
       i18n
@@ -112,7 +108,6 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colorize (0.7.5)
-    columnize (0.9.0)
     connection_pool (2.1.0)
     coveralls (0.7.8)
       multi_json (~> 1.10)
@@ -123,7 +118,6 @@ GEM
     daemons (1.1.9)
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
-    debugger-linecache (1.2.0)
     descriptive_statistics (2.5.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -368,7 +362,6 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -429,7 +422,6 @@ DEPENDENCIES
   bson_ext
   builder
   bunny (~> 0.9.1)
-  byebug
   cancan
   capistrano (~> 3.2.1)
   capistrano-bundler
