@@ -1,0 +1,6 @@
+{
+  "name": "Twilio | Send SMS",
+  "path": "send_sms",
+  "purpose": "send",
+  "method": "post"
+}

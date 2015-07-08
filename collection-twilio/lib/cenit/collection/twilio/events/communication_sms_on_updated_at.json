@@ -1,0 +1,17 @@
+{
+  "name": "Communication | SMS on updated_at",
+  "_type": "Setup::Observer",
+  "triggers": "{\"updated_at\":{\"0\":{\"o\":\"_change\",\"v\":[\"\",\"\",\"\"]}}}",
+  "data_type": {
+    "_reference": true,
+    "name": "Sms",
+    "schema": {
+      "_reference": true,
+      "uri": "sms.json",
+      "library": {
+        "_reference": true,
+        "name": "Communication"
+      }
+    }
+  }
+}

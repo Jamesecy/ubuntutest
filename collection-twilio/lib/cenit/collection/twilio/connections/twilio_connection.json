@@ -1,0 +1,12 @@
+{
+  "name": "Twilio Connection",
+  "url": "http://twilio.cenithub.com",
+  "template_parameters": [
+    {
+      "key": "twilio_account_sid"
+    },
+    {
+      "key": "twilio_auth_token"
+    }
+  ]
+}

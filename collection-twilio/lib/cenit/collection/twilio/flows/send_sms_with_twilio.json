@@ -1,0 +1,30 @@
+{
+  "name": "Send SMS with Twilio",
+  "active": true,
+  "discard_events": false,
+  "data_type_scope": "Event source",
+  "event": {
+    "_reference": true,
+    "name": "Communication | SMS on updated_at"
+  },
+  "translator": {
+    "_reference": true,
+    "name": "Request with CENIT Integration"
+  },
+  "custom_data_type": {
+    "_reference": true,
+    "name": "Sms",
+    "schema": {
+      "_reference": true,
+      "uri": "sms.json",
+      "library": {
+        "_reference": true,
+        "name": "Communication"
+      }
+    }
+  },
+  "webhook": {
+    "_reference": true,
+    "name": "Twilio | Send SMS"
+  }
+}

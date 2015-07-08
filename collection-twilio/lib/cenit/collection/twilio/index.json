@@ -1,0 +1,15 @@
+{
+  "name": "Twilio CENIT Integration",
+  "category": "Collection",
+  "description": "Twilio CENIT Integration",
+  "pull_parameters": [
+    {
+      "label": "Account SID",
+      "parameter": "On connection 'Twilio Connection' template parameter 'twilio_account_sid'"
+    },
+    {
+      "label": "Auth Token",
+      "parameter": "On connection 'Twilio Connection' template parameter 'twilio_auth_token'"
+    }
+  ]
+}

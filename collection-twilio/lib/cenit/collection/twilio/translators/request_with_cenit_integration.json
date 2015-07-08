@@ -1,0 +1,9 @@
+{
+  "name": "Request with CENIT Integration",
+  "type": "Export",
+  "style": "ruby",
+  "mime_type": "application/json",
+  "file_extension": "json",
+  "bulk_source": false,
+  "transformation": "source.to_hash(:include_root => true).merge( \"request_id\" => source.id.to_s, parameters: parameters).to_json"
+}
