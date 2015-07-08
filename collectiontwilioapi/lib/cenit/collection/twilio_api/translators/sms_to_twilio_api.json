@@ -1,0 +1,20 @@
+{
+  "name": "SMS to Twilio API",
+  "type": "Export",
+  "style": "ruby",
+  "mime_type": "application/x-www-form-urlencoded",
+  "bulk_source": false,
+  "transformation": "\"Body=#{source.message}&To=#{source.phone}&From=#{source.from}\"",
+  "source_data_type": {
+    "_reference": true,
+    "name": "Sms",
+    "schema": {
+      "_reference": true,
+      "uri": "sms.json",
+      "library": {
+        "_reference": true,
+        "name": "Communication"
+      }
+    }
+  }
+}

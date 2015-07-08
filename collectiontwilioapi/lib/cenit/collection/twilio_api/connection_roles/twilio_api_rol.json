@@ -1,0 +1,15 @@
+{
+  "name": "Twilio API Rol",
+  "webhooks": [
+    {
+      "_reference": true,
+      "name": "Twilio API | Send SMS"
+    }
+  ],
+  "connections": [
+    {
+      "_reference": true,
+      "name": "Twilio API Conection"
+    }
+  ]
+}

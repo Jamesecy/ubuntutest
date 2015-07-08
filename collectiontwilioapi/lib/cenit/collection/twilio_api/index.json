@@ -1,0 +1,15 @@
+{
+  "name": "Twilio API Integration",
+  "category": "Collection",
+  "description": "Twilio API Integration",
+  "pull_parameters": [
+    {
+      "label": "Account SID",
+      "parameter": "On connection 'Twilio API Conection' template parameter 'account_sid'"
+    },
+    {
+      "label": "Auth Token",
+      "parameter": "On connection 'Twilio API Conection' template parameter 'auth_token'"
+    }
+  ]
+}

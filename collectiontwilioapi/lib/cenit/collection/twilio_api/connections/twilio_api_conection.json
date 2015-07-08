@@ -1,0 +1,26 @@
+{
+  "name": "Twilio API Conection",
+  "url": "https://api.twilio.com/2010-04-01/Accounts/{{account_sid}}",
+  "headers": [
+    {
+      "key": "Accept-Charset:",
+      "value": "utf-8"
+    },
+    {
+      "key": "Accept",
+      "value": "application/json"
+    },
+    {
+      "key": "Authorization",
+      "value": "Basic {% base64 account_sid:auth_token %}"
+    }
+  ],
+  "template_parameters": [
+    {
+      "key": "auth_token"
+    },
+    {
+      "key": "account_sid"
+    }
+  ]
+}

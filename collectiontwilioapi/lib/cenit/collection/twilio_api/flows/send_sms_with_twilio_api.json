@@ -1,0 +1,19 @@
+{
+  "name": "Send SMS with Twilio API",
+  "active": true,
+  "discard_events": false,
+  "data_type_scope": "Event source",
+  "last_trigger_timestamps": "2015-04-24 15:47:50 UTC",
+  "event": {
+    "_reference": true,
+    "name": "Communication | SMS on created_at"
+  },
+  "translator": {
+    "_reference": true,
+    "name": "SMS to Twilio API"
+  },
+  "webhook": {
+    "_reference": true,
+    "name": "Twilio API | Send SMS"
+  }
+}

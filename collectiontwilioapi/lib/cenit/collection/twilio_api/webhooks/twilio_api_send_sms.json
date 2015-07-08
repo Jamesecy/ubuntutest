@@ -1,0 +1,6 @@
+{
+  "name": "Twilio API | Send SMS",
+  "path": "Messages.json",
+  "purpose": "send",
+  "method": "post"
+}
