@@ -1,0 +1,103 @@
+
+<div id="slider">
+  <div class="container">
+    <div class="row header">
+      <div class="col-md-12">
+        <h3>About React Themes</h3>
+        <p>
+          You have to roll up your sleeves and be a stonecutter before you can become a sculptor – command of craft always precedes art.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="flexslider">
+          <ul class="slides">
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+              <%= image_tag 'office2.png',:draggable => 'false', :alt => 'office2' %>
+            </li>
+            <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+              <%= image_tag 'office1.png',:draggable => 'false', :alt => 'office1' %>
+            </li>
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+              <%= image_tag 'office3.png',:draggable => 'false', :alt => 'office3' %>
+            </li>
+          </ul>
+          <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li><li><a class="">3</a></li></ol></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="info">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>We care about our work</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          Whether you want to fill this paragraph with some text like I'm doing right now, this place is perfect to describe some features or anything you want - React has a complete solution for you.
+        </p>
+        <p>
+          You have complete control over the look &amp; feel of your website, we offer the best quality so you take your site up and running in no time.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          React is a simple, developer-friendly way to get your site. Full of features, cool documentation ease of use, lots of pages. We want to help bringing cool stuff to people so they can get their projects faster.
+        </p>
+        <a href="#" class="join-team button button-small">Join our team</a>
+      </div>
+    </div>
+    <div class="row stats">
+      <div class="col-sm-3">
+        <strong>13</strong>
+        employees
+      </div>
+      <div class="col-sm-3">
+        <strong>10k</strong>
+        customers
+      </div>
+      <div class="col-sm-3">
+        <strong>9</strong>
+        template pages
+      </div>
+      <div class="col-sm-3">
+        <strong>13k</strong>
+        products sold
+      </div>
+    </div>
+    <div class="row team">
+      <div class="col-md-12 team-row">
+        <%= image_tag 'testimonials/testimonial1.jpg',:'data-original-title' => 'Eric Smith - CEO', :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial2.jpg',:'data-original-title' => "Rachel Dawes - PM", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial3.jpg',:'data-original-title' => "Henry Hill - Developer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial4.jpg',:'data-original-title' => "Ana Rich - Designer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial7.jpg',:'data-original-title' => "Jessica Welch - Designer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial8.jpg',:'data-original-title' => "Charly - iOS Developer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+      </div>
+      <div class="col-md-12 team-row">
+        <%= image_tag 'testimonials/testimonial5.jpg',:'data-original-title' => 'Karen Stewart - PM', :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial4.jpg',:'data-original-title' => "Charly - iOS Developer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial7.jpg',:'data-original-title' => "Jessica Welch - Designer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial8.jpg',:'data-original-title' => "John Raynolds - UI/UX", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial3.jpg',:'data-original-title' => "Henry Hill - Developer", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+        <%= image_tag 'testimonials/testimonial2.jpg',:'data-original-title' => "Rachel Dawes - PM", :'data-toggle' => 'tooltip', :title => '', :alt => 'testimonial' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function() {
+        $('.flexslider').flexslider({
+            directionNav: false,
+            slideshowSpeed: 4000
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+ <% if (cenit_app = Doorkeeper::Application.where(name: 'Cenit').first).present? %>
+   <%= link_to "Data Integrator",cenithub_url(cenit_app), class: 'button' %>
+ <% end %>
+<% end %>

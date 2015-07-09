@@ -1,0 +1,24 @@
+<nav class="nav-menu">
+  <h3>Menu</h3>
+  <% link_to 'Data Integration', hub_path, :class => 'item' %>
+  <%= link_to 'ERP & CRM', "#{root_path}#services", :class => 'item' %>
+  <%= link_to 'Pricing', "#{root_path}#pricing", :class => 'item' %>
+  <% if current_user.present? %>
+    <%= link_to 'Edit account', edit_user_registration_path %>
+    <%= link_to 'Profile', status_path(current_user.id), :class => 'item' %>
+  <% end %>
+  <%= link_to 'Docs',ENV['DOC_URL'], :class => 'item' %>
+  <% if current_user && current_user.has_role?(:admin) %>
+    <%= link_to 'Applications', 'oauth/applications' %>
+    <%= link_to 'Rails Admin', '/data' %>
+<% end  %>
+  <a data-toggle="modal"  class="item" href="#contact_us" data-backdrop="false">Contact Us</a>
+  <div class="social">
+    <a href="http://www.linkedin.com/company/cenit-llc">
+      <%=image_tag 'social/in.png',:alt=>'linkedin' %>
+    </a>
+    <a href="https://github.com/openjaf/cenit">
+      <%=image_tag 'social/github-sociocon.png',:alt=>'github' %>
+    </a>
+  </div>
+</nav>

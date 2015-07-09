@@ -1,0 +1,46 @@
+<div id='features' class="container text-center">
+  <div id="second-option">
+    <% unless params[:controller] == 'hub' %>
+      <div class="row header">
+        <h2>Open Source Hub for Data and Business Integrations</h2>
+      </div>
+    <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 feature">
+          <%= image_tag 'circle-icons/one-color/traffic.png', :alt => 'globe' %>
+          <strong>A rich Router logic </strong>
+          <p>Can upload your documents and make custom Flows to redirect and transform messages from Hub to severals endpoints.</p>
+        </div>
+        <div class="col-md-4 feature">
+          <%= image_tag 'circle-icons/one-color/stack.png', :alt => 'creditcard' %>
+          <strong>Support multiple kind of Schemas </strong>
+           <p>Does registrations with Json Schema, XSD or EDI Grammar. That allow exchange different kind of documents and validate with schemas.</p>
+        </div>
+      
+        <div class="col-md-4 feature">
+          <%= image_tag 'circle-icons/one-color/globe.png', :alt => 'dev' %>
+          <strong>Third party service integrations</strong>
+          <p>Connection out of the box with many third party service: Fulfilment / Accounting / Customer Service / Point of Sale / ERP ..</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 feature">
+          <%= image_tag 'circle-icons/one-color/trends.png', :alt => 'support' %>
+          <strong>Commerce Data</strong>
+          <p>Process objects that are Data representation of real-world commerce information such as Orders, Shipments, and Products.</p>
+        </div>
+        <div class="col-md-4 feature">
+          <%= image_tag 'circle-icons/one-color/unlocked.png', :alt => 'mail' %>
+          <strong>Free account </strong>
+          <p>Tenant without limit in use, complete access to configuration Setup and 100 MB space for historic data.</p>
+        </div>
+        <div class="col-md-4 feature">
+          <%= image_tag 'circle-icons/one-color/support.png', :alt => 'locked' %>
+          <strong>Community friendly</strong>
+          <p>100% Open Source Code. Available in github for grow together in community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

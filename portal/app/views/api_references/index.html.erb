@@ -1,0 +1,436 @@
+<div id="docs" data-spy="scroll" data-target="#guide">  
+<div id="guide">
+  <h1 class="logo">
+    <a href="index.html">Cenit API</a>
+  </h1>
+  <ul class="menu nav">
+    <li>
+        <a href="#intro">Introduction</a>
+    </li>
+    <li>
+        <a href="#auth">Authentication</a>
+    </li>
+    <li>
+      <a href="#connections">Connections</a>
+      <ul class="nav">
+        <li><a href="#js-individual-compiled">Retrieve a Game</a></li>
+        <li><a href="#js-data-attrs">Create a Game</a></li>
+        <li><a href="#js-programmatic-api">Delete a Game</a></li>
+      </ul>
+    </li>
+    <li>
+        <a href="#errors">Errors</a>
+    </li>
+  </ul>
+</div>
+
+<div id="api-docs">
+  <div id="methods">
+    <div class="languages">
+      <a class="language selected" data-lang="bash" href="#">Curl</a>
+      <a class="language" data-lang="ruby" href="#">Ruby</a>
+      <a class="language" data-lang="python" href="#">Python</a>
+    </div>
+    <div class="method" id="intro">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3>Introduction</h3>
+          <p>
+            The Cenit API is organized around REST. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors
+          </p>
+        </div>
+        <div class="method-example">
+          <pre>
+            <code class="ruby"># All this code is just for demonstration purposes
+
+            React.api_key = "In here goes your api key!"</code><code class="python"># All this code is just for demonstration purposes
+
+            react.api_key = "In here goes your api key!"</code><code class="php"># All this code is just for demonstration purposes
+
+            React::setApiKey("In here goes your api key!");</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    
+    <div class="method" id="auth">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3>Authentication</h3>
+          <p>You authenticate to the Cenit API by providing your API key and token in the request.</p>
+          <p>In order to securely you will need to include the following values as part of the request header:</p>
+
+          <table>
+            <tbody>
+              <tr><td>X-Hub-Store</td> <td>The identifier for the store you are pushing to.</td></tr>
+              <tr><td>X-Hub-Access-Token</td> <td>The secure access token associated with your store.</td></tr>
+            </tbody>
+          </table>
+
+          <br />
+          <p>Is possible use the user credentials too:</p>
+
+          <table>
+            <tbody>
+              <tr><td>X-User-Access-Key</td><td>The identifier for the user account.</td></tr>
+              <tr><td>X-User-Access-Token</td><td>The secure access token associated with your user account.</td></tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="method-example">
+          <pre>
+            <code class="bash">
+              
+              Example Request
+
+              $ curl --data @./objects.json -i -X POST \
+                  -H 'X-Hub-Store: YOUR_STORE_ID' \ 
+                  -H 'X-Hub-Access-Token: YOUR_ACCESS_TOKEN' \
+                  -H 'Content-type:application/json' 
+                  http://www.cenithub.com/api/v1/push
+                  
+              or 
+              
+              $ curl --data @./objects.json -i -X POST \
+                  -H 'X-User-Access-Key: YOUR_USER_KEY' \ 
+                  -H 'X-User-Access-Token: YOUR_USER_ACCESS_TOKEN' \
+                  -H 'Content-type:application/json' 
+                  http://www.cenithub.com/api/v1/push
+
+            </code>
+
+            <code class="ruby">
+              class A < B 
+                def self.create(object = User) 
+                  return object 
+                end
+
+                def full_name
+                  return "#{self.first_name} #{self.last_name}"
+                end
+              end
+            </code>
+            
+            <code class="python">
+              class Mapping:
+                def __init__(self, iterable):
+                  self.items_list = []
+                  self.__update(iterable)
+
+                def update(self, iterable):
+                  for item in iterable:
+                    self.items_list.append(item)
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="method" id="connections">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3>Connections</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+
+          <div class="info">
+            <h4>The Connections Object</h4>
+            <div class="field clearfix">
+              <div class="key">name:</div>
+              <div class="desc">
+                <strong>string</strong>
+                The name of the connection
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">url:</div>
+              <div class="desc">
+                <strong>string</strong>
+                The url of the connection
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">key:</div>
+              <div class="desc">  
+                <strong>string</strong>
+                Acess key for user
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">token:</div>
+              <div class="desc">
+                <strong>integer</strong>
+                Acess token fir user
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-example">
+          <pre>
+                <code class="bash">
+                 ## Show
+
+                 curl -i -X GET \
+                   -H 'X-User-Access-Key: N196371715' \
+                   -H 'X-User-Access-Token: sAgxA1kviRKnMA3eFx5_' \
+                   http://www.cenithub.com/api/v1/connections/553995c06d69677e50000000
+
+                 ## Index
+
+                 curl -i -X GET \
+                   -H 'X-User-Access-Key: N196371715' \
+                   -H 'X-User-Access-Token: sAgxA1kviRKnMA3eFx5_' \ 
+                   http://www.cenithub.com/api/v1/connections
+
+                 Delete
+
+                 curl -i -X DELETE \
+                   -H 'X-User-Access-Key: N196371715' \
+                   -H 'X-User-Access-Token: sAgxA1kviRKnMA3eFx5_' \
+                   http://www.cenithub.com/api/v1/connections/553995c06d69677e50000000
+                   
+                </code>
+                <code class="ruby">
+                 React::Game.create(
+                   :name => "Super Mario Bros",
+                   :company => "Nintendo",
+                   :some_key => "yey_JA390094AWPIWWN435",
+                   :rating => 100
+                 )
+                 </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="method" id="users">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3>Users</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+          <div class="info">
+            <h4>The User Object</h4>
+            <div class="field clearfix">
+              <div class="key">name:</div>
+              <div class="desc">
+                <strong>string</strong>
+                The name of the user
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">email:</div>
+              <div class="desc">
+                <strong>string</strong>
+                The email of the user
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">country:</div>
+              <div class="desc">
+                <strong>string</strong>
+                2 letter code for the country
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">age:</div>
+              <div class="desc">
+                <strong>integer</strong>
+                Age of the user
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">description:</div>
+              <div class="desc">
+                <strong>hash</strong>
+                key/value pairs with fields that describe the user.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-example">
+          <pre>
+            <code class="ruby">React::User.create(
+            :name => "John McClane",
+            :email => "john_mcclane@awesome.com",
+            :country => "US",
+            :some_key => "yey_JA390094AWPIWWN435",
+            :age => 53
+            )
+            </code><code class="python">react.User.create(
+            name="John McClane",
+            email="john_mcclane@awesome.com",
+            country="US",
+            some_key="yey_JA390094AWPIWWN435",
+            age=53
+            )
+            </code><code class="php">React_User::create(array(
+            "name" => "John McClane",
+            "email" => "john_mcclane@awesome.com",
+            "country" => "US",
+            "some_key" => "yey_JA390094AWPIWWN435",
+            "age" => 53
+            ));
+            </code>
+            <code class="ruby"># Object Response
+            {
+            "object": "User",
+            "name": "John McClane",
+            "email": "john_mcclane@awesome.com",
+            "country": "US",
+            "some_key": "yey_JA390094AWPIWWN435",
+            "age": 53
+            "address": {
+              "address_line1": null,
+              "address_line2": null,
+              "address_city": null,
+              "address_state": null,
+              "address_zip": null,
+              "address_country": null
+            }
+            "valid": true,
+            "description": null
+            }
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="method" id="orders">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3>Orders</h3>
+          <p>
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+        <div class="method-example">
+          <pre>
+            <code class="ruby">React::Order.create(
+            :item => "React Bootstrap Theme",
+            :price => 1500,
+            :name => "John McClane",
+            :email => "john_mcclane@awesome.com",
+            :country => "US",
+            :some_key => "yey_JA390094AWPIWWN435",
+            :age => 53
+            )
+            </code>
+            <code class="python">react.User.create(
+            item="React Bootstrap Theme",
+            price=1500,
+            name="John McClane",
+            email="john_mcclane@awesome.com",
+            country="US",
+            some_key="yey_JA390094AWPIWWN435",
+            age=53
+            )
+            </code>
+            <code class="php">React_User::create(array(
+            "item" => "React Bootstrap Theme",
+            "price" => 1500,
+            "name" => "John McClane",
+            "email" => "john_mcclane@awesome.com",
+            "country" => "US",
+            "some_key" => "yey_JA390094AWPIWWN435",
+            "age" => 53
+            ));
+            </code>
+            <code class="ruby"># Object Response
+            {
+            "object": "Order",
+            "item": "React Bootstrap Theme",
+            "price": 1500,
+            "name": "John McClane",
+            "email": "john_mcclane@awesome.com",
+            "country": "US",
+            "some_key": "yey_JA390094AWPIWWN435",
+            "age": 53
+            "address": {
+              "address_line1": null,
+              "address_line2": null,
+              "address_city": null,
+              "address_state": null,
+              "address_zip": null,
+              "address_country": null
+            }
+            "valid": true,
+            "description": null
+            }
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="method" id="errors">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3>Errors</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+          <div class="info">
+            <h4>Attributes</h4>
+            <div class="field clearfix">
+              <div class="key">code:</div>
+              <div class="desc">
+                <strong>string</strong>
+                Code of the error
+              </div>
+            </div>
+            <div class="field clearfix">
+              <div class="key">message:</div>
+              <div class="desc">
+                <strong>string</strong>
+                A complete message with details about the error to show users.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="method-example">
+          <pre>
+            <code class="http always-visible">200 OK - Everything worked.
+
+            400 Bad Request - The request was badly built
+
+            401 Unauthorized - Some other message
+
+            402 Request Failed - The request failed
+
+            404 Not Found - Doesn't exist
+
+            500, 502, 503, 504 Server errors
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    //hljs.configure({
+    //  tabReplace: '  ',
+    //  classPrefix: ''
+    //})
+    //hljs.initHighlightingOnLoad();
+    
+    // language toggle
+    var $languages = $(".languages .language");
+    $languages.click(function (e) {
+      e.preventDefault();
+      var lang = $(this).data("lang");
+      $languages.removeClass("selected");
+      $(this).addClass("selected");
+
+      $("pre code").hide();
+      $("pre code." + lang).css("display", "block");
+    });
+  });
+</script>
+</div>

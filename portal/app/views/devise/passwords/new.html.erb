@@ -1,0 +1,17 @@
+<% title = 'Forgot your password?' %>
+<%= render 'shared/page_header', title: title, home: false %>
+
+<div class="container">
+  <div class="authform col-sm-8 col-sm-offset-2">
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
+      <h3>We'll send password reset instructions.</h3>
+      <%= devise_error_messages! %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+      </div>
+       <%= f.submit 'Reset Password', :class => 'button right' %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,60 @@
+<div id="card-data" class="modal fade" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <% content_for :head do %>
+          <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+        <% end %>
+        <div id="stripe_error" class="alert alert-error" style="display:none" >
+        </div>
+        <%= form_for user, :url => update_card_path, :html => {:method => :put, :class => 'form-horizontal card_form' } do |f| %>
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal">&#215;</a>
+            <h3>Enter Card Information</h3>
+          </div>
+          <div class="modal-body">
+            <div class="field form-group">
+              <%= label_tag :card_number, "Card Number", class: "col-sm-3 control-label", for: "card-number" %>
+              <div class="col-sm-9">
+                <%= text_field_tag :card_number, nil, name: nil, class: 'form-control', placeholder: "Debit/Credit Card Number"%>
+              </div>
+            </div>
+            
+            <div class="field form-group">
+              <%= label_tag :card_month, "Expiration Date", class: "col-sm-3 control-label", for: "expiry-date" %>
+              <div class="col-sm-9">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month",class: "col-sm-2 form-control", for: "expiry-month"}%>
+                  </div>
+                  <div class="col-xs-3">
+                    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year",class: "col-sm-2 form-control", for: "expiry-year"}%>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            
+            <div class="field form-group">
+              <%= label_tag :card_code, "Card CVC", class: "col-sm-3 control-label", for: "cvc"  %>
+              <div class="col-sm-3">
+                <%= text_field_tag :card_code, nil, name: nil, class: 'form-control', placeholder: "Security Code" %>
+              </div>
+              <div class="col-sm-3 col-sm-offset-2 ">
+                <%= image_tag 'credit_card.gif', :class => 'credit-card-image' %>
+              </div>
+            </div>
+            
+            <%= f.hidden_field :email %>
+            <%= f.hidden_field :stripe_token %>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit "Submit", :class => "btn btn-primary" %>
+            <a class="btn" data-dismiss="modal" href="#">Close</a>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

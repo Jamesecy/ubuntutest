@@ -1,0 +1,39 @@
+<div id="contact_us" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content col-md-7">
+
+      <div id="info">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 message">
+              <%= form_for ContactUs::Contact.new, :url => contacts_path, :html => {:class => 'formtastic contact-form', :role=>"form", :id=>"contact-form"}  do |f| %>
+                <div class="modal-body">
+                  <div class="form-group">
+                      <%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+                      <%= f.text_field :name, id: :name, class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :email, (t('.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+                      <%= f.text_field :email, id: :email, class: 'form-control'%>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :message, (t('.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+                      <%= f.text_area :message, id: :message, class: 'form-control', rows: '6' %>
+                    </div>
+                    <div class="submit">
+                      <input type="submit" class="button button-small" value="Send us" />
+                      <divclass="right modal-footer">
+                        <%= link_to 'Close', '#', data: {dismiss: "modal"} %>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

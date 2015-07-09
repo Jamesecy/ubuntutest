@@ -1,0 +1,29 @@
+<div id="status" class="<%= controller_name %> <%= action_name %>">
+
+  <div id="update">
+    <div class="container">
+      <%= render 'layouts/messages' %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="current-status">
+            <div class="status">
+              <div class="color green"></div>
+              Billing Information
+            </div>
+            <div class="help">
+              <% if user.customer_id %>
+    This account is billed to: <%= user.last_4_digits %>
+                <a data-toggle="modal" href="#card-data" class="btn btn-mini" type="button">Update card</a>
+              <% else %>
+                <a data-toggle="modal" href="#card-data" class="btn btn-mini" type="button">Add card</a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div>
+
+<%= render 'shared/update_card', user: user %>

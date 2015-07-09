@@ -1,0 +1,101 @@
+<% if current_user.present? %>
+  <% ref = '#' %>
+<% else %>
+  <% ref = "#sing_up" %>
+<% end %>
+
+<div id="pricing">
+  <div class="container">
+    <div class="row header">
+      <div class="col-md-12">
+        <h3>Begin and continue free if you want.</h3>
+        <p>Only pay extra space and a fee for successful comercial transactions</p>
+      </div>
+    </div>
+    <div class="row charts">
+      <div class="col-md-4">
+        <div class="chart first">
+          <div class="plan-name">Free</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="variable">Unlimited</span>
+              team members
+            </div>
+            <div class="spec">
+              <span class="variable">100 MB</span>
+              disc space
+            </div>
+            <div class="spec">
+              <span class="variable">ERP</span>
+              workspace tenant
+            </div>
+            <div class="spec">
+              <span class="variable">Unlimited</span>
+              data exchange
+            </div>
+          </div>
+          <a class="btn-signup button-clear" href='<%= ref %>' >
+            <span>Start free</span>
+          </a>
+
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="chart featured">
+          <div class="popular">Recomended</div>
+          <div class="plan-name">Variable</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="variable"> Included </span>
+              Free options
+            </div>
+            <div class="spec">
+              <span class="variable"> $0.1 x MB </span>
+              over 100 MB
+            </div>
+            <div class="spec">
+              <span class="variable">$0.1</span>
+              x B2C order
+            </div>
+            <div class="spec">
+              <span class="variable">$1</span>
+              x B2B flow
+            </div>
+          </div>
+          <a class="btn-signup button-clear" href='<%= ref %>' >
+            <span>Start</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="chart last">
+          <div class="plan-name">Enterprise</div>
+          <div class="specs">
+            <div class="spec">
+              <span class="variable">Unlimited</span>
+              tenants
+            </div>
+            <div class="spec">
+              <span class="variable">Include</span>
+              SaaS management
+            </div>
+            <div class="spec">
+              <span class="variable">$0.05</span>
+              x B2C order
+            </div>
+            <div class="spec">
+              <span class="variable">$0.5</span>
+              x B2B flow
+            </div>
+          </div>
+          <a data-toggle="modal" class="btn-signup button-clear" href="#contact_us">
+            <span>Contact Us</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

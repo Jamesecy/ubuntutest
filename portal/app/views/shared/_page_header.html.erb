@@ -1,0 +1,68 @@
+<div id="hero" class="<%= home ? '' : 'hub' %>">
+  <div id="<%= home ? "cover-image" : '' %>"  class="animated fadeIn">
+    <div class="container">
+      <h1 class="hero-text animated fadeIn"><%= title %></h1>
+      <% if home %>
+         <div class="cta animated fadeIn">
+          <% if user_signed_in? %>
+
+           <% if (cenit_app = Doorkeeper::Application.where(name: 'Cenit').first).present? %>
+             <%= link_to "Data Integrator",'#', class: 'button' 
+             # cenithub_url(cenit_app)
+             %>
+           <% end %>
+           
+           <% if (odoo_app = Doorkeeper::Application.where(name: 'odoo').first).present? %>
+             <%= link_to "ERP & CRM", cenitodoo_url(current_user, odoo_app), class: 'button' %>
+           <% end %>
+
+           <%= link_to "Sign out", destroy_user_session_path, class: 'demo', method: 'delete' %>
+          <% else %>
+            <%= link_to 'Data Integrator', new_user_registration_path, class: 'button' %>
+            <%= link_to 'ERP & CRM', new_user_registration_path, class: 'button' %>
+            
+            <%= link_to 'Sign in / Free trial', new_user_session_path, class: 'demo', id: 'sign-in-link' %>
+          <% end %>
+        </div>
+        <div class="screenshot animated fadeInUp">
+          <%= image_tag 'ss2.png',:class => 'img-responsive', :alt => 'screenshot' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<script>
+    $(function () {
+
+      // triggers the off-canvas panel
+      $(".sidebar-toggle").click(function (e) {
+        e.stopPropagation();
+        $(".st-container").toggleClass("nav-effect");
+      });
+      $(".st-pusher").click(function () {
+        $(".st-container").removeClass("nav-effect");
+      });
+
+      // parallax header
+      $('#cover-image').css("background-position", "50% 50%");
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop(),
+          slowScroll = scroll/4,
+          slowBg = 50 - slowScroll;
+        $('#cover-image').css("background-position", "50% " + slowBg + "%");
+      });
+
+      $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var recipient = button.data('whatever'); // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        modal.find('.modal-title').text('New message to ' + recipient);
+        modal.find('.modal-body input').val(recipient);
+      });
+
+    });
+</script>
