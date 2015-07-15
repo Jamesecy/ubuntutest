@@ -1,0 +1,74 @@
+N793645241
+
+
+A3Nx8nWbxNGyCzyC_SbC
+
+
+eight
+
+N274515452
+
+Shms8nrW_zvzRLVfRzeH
+
+
+
+
+$ sudo curl -i -X POST -H 'X-Hub-Store: C805764401' -H 'X-Hub-Access-Token: sASPbQqfZK2CemaNP6w3' -H 'Content-type:application/json' --insecure -d'{
+ "Message": [
+        {   
+            "from": "1 415-599-2671",
+            "to": "17806040903",
+            "body": "balabala"
+        },
+        {
+              
+            "from": "1 415-599-2671",
+            "to": "17806040903",
+            "body": "balabala"
+        }
+    ]
+}' https://www.cenithub.com/api/v1/twilio/push
+
+
+sudo curl -i -X POST -H 'X-Hub-Store: C563297662' -H 'X-Hub-Access-Token: eWRJzZcRdC2ojz4S2CCq' -H 'Content-type:application/json' --insecure -d'{
+ "Message": [
+        {   
+            "from": "1 415-599-2671",
+            "to": "17806040903",
+            "body": "balabala"
+        },
+        {
+              
+            "from": "1 415-599-2671",
+            "to": "17806040903",
+            "body": "balabala"
+        }
+    ]
+}' http://localhost:3000/api/v1/twilio/push
+
+
+
+
+sudo curl -i -X POST -H 'X-Hub-Store: C242630637' -H 'X-Hub-Access-Token: yJRaWsEyjG3J2D8XXiKP' -H 'Content-type:application/json' --insecure -d'{ "Message": [ {   
+            "from": "1 415-599-2671",
+            "to": "17806040903",
+            "body": "balabala"
+        }]}' http://localhost:3000/api/v1/twilio/push
+  
+
+
+
+sudo curl -i -X POST -H 'HTTP_X_HUB_TOKEN' : 'x123'  -H 'CONTENT_TYPE' : 'application/json' -d '{ "request_id" : "345345345",  "Message": {
+      "from":"1 415-599-2671",
+      "to": "1 780 6040903",
+      "body": "Order R12345 was shipped!"
+    },
+"parameters" :{"twilio_account_sid" : "ACa1549f8be7f30d1802bea446495bd728","twilio_auth_token" : "48461649510250e474d81886c3ea1afa"}
+}' localhost:9292/send_sms/
+
+
+
+
+
+
+
