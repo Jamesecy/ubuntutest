@@ -1,0 +1,1 @@
+o: ActiveSupport::Cache::Entry:@value{I"Spree::Order:ET{:serializerI"#Spree::Wombat::OrderSerializer;T:	rootI"orders;TI"Spree::Product;T{;I"%Spree::Wombat::ProductSerializer;T;	I"products;T:@created_atf1438302635.1041832:@expires_in0
